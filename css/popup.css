@@ -1,0 +1,284 @@
+/* MLPA Prototype - Popups, Overlays & Modals */
+/* Rubric, Branching, Offline, Upload Error */
+
+/* ==================== */
+/* Rubric Popup */
+/* ==================== */
+
+/* Rubric Popup (original - hidden, used as data source) */
+.rubric-popup {
+    display: none !important;
+}
+
+/* Rubric Popup Portal (rendered in body, escapes stacking context) */
+.rubric-popup-portal {
+    position: fixed;
+    padding: 12px 16px;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 10000;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.rubric-title {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.rubric-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rubric-item {
+    font-size: var(--font-size-xs);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rubric-item::before {
+    content: '•';
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==================== */
+/* Branching Popup */
+/* ==================== */
+
+/* Branching Popup (inside world layer for pan consistency) */
+.branching-popup {
+    position: absolute;
+    width: 360px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    z-index: 100;
+    transition: opacity var(--transition-fast);
+}
+
+.branching-popup.hidden {
+    display: none;
+    pointer-events: none;
+}
+
+.branching-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.branching-popup-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+}
+
+.branching-popup-close {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.branching-popup-close:hover {
+    background: var(--color-surface-hover);
+}
+
+.branching-popup-close svg {
+    width: 16px;
+    height: 16px;
+}
+
+.branching-popup-body {
+    padding: 16px 20px;
+}
+
+.branching-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+    resize: vertical;
+    transition: border-color var(--transition-fast);
+}
+
+.branching-input:focus {
+    outline: none;
+    border-color: var(--color-border-active);
+}
+
+.branching-popup-footer {
+    padding: 12px 20px 20px;
+}
+
+.branching-submit {
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--sidebar-bg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.branching-submit:hover {
+    background: #2a2a2a;
+}
+
+/* ==================== */
+/* Offline Overlay */
+/* ==================== */
+
+.offline-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.offline-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.offline-content {
+    text-align: center;
+    padding: var(--space-xl);
+}
+
+.offline-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.offline-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: 0 0 8px 0;
+}
+
+.offline-message {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* ==================== */
+/* Upload Error Modal */
+/* ==================== */
+
+.upload-error-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.upload-error-modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.upload-error-content {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.upload-error-modal.hidden .upload-error-content {
+    transform: scale(0.95);
+}
+
+.upload-error-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: 0 0 12px 0;
+}
+
+.upload-error-message {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+}
+
+.upload-error-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.upload-error-btn {
+    padding: 12px 24px;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+}
+
+.upload-error-btn.primary {
+    background: var(--color-text);
+    color: white;
+}
+
+.upload-error-btn.primary:hover {
+    background: #333;
+}
+
+.upload-error-btn.secondary {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-text);
+}
+
+.upload-error-btn.secondary:hover {
+    background: rgba(0, 0, 0, 0.1);
+}

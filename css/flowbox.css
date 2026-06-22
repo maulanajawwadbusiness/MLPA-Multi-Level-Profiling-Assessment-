@@ -1,0 +1,322 @@
+/* MLPA Prototype - Flowbox Visuals */
+/* Flow boxes, dimension/item styling, edit mode, hover tools */
+
+/* Flow Boxes Container */
+.flow-boxes {
+    position: relative !important;
+    display: block !important;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Flow Box (Scale Container) */
+.flow-box {
+    pointer-events: auto;
+    position: absolute !important;
+    z-index: 1;
+    min-width: 320px;
+    max-width: 480px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: box-shadow var(--transition-fast);
+    font-size: 12.5px;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    height: auto;
+    overflow: visible;
+}
+
+/* Specificity Override for Inner Content */
+.flow-box .question-item,
+.flow-box .scale-item,
+.flow-box .statement-card,
+.flow-box p {
+    font-size: 12.5px !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em;
+}
+
+.flow-box:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Flow Box Header */
+.flow-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.flow-box-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+}
+
+.flow-box-toggle {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base);
+    transform: rotate(90deg);
+}
+
+.flow-box.flow-mode-collapsed .flow-box-toggle {
+    transform: rotate(0deg);
+}
+
+/* Flow Box Content */
+.flow-box-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: visible;
+    max-height: none;
+    transition: max-height var(--transition-smooth), padding var(--transition-smooth), opacity var(--transition-fast);
+    font-size: 12.5px;
+    line-height: 1.4;
+}
+
+.flow-box.flow-mode-collapsed .flow-box-content {
+    max-height: 0;
+    padding: 0 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hover Tools */
+.flow-box-tools {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.flow-box:hover .flow-box-tools {
+    opacity: 1;
+    visibility: visible;
+}
+
+.flow-tool-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.flow-tool-btn:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-hover);
+}
+
+.flow-tool-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.flow-tool-btn.branch-btn {
+    width: 44px;
+    height: 44px;
+    background: var(--sidebar-bg);
+    border-color: var(--sidebar-bg);
+}
+
+.flow-tool-btn.branch-btn:hover {
+    background: #2a2a2a;
+}
+
+.flow-tool-btn.branch-btn img {
+    width: 22px;
+    height: 22px;
+    filter: invert(1);
+}
+
+/* Dimension Box */
+.dimension-box {
+    position: relative;
+    padding: 16px 16px 16px 52px;
+    background: var(--color-surface-hover);
+    border-radius: var(--border-radius-sm);
+    overflow: visible;
+}
+
+.dimension-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 44px;
+    padding: 10px 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    overflow: hidden;
+}
+
+.dimension-label-line {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.58em;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+    white-space: normal;
+    word-break: break-word;
+    line-height: 0.95;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+.dimension-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    overflow: hidden;
+}
+
+/* Item Box */
+.item-box {
+    position: relative;
+    padding: 8px 10px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: var(--font-size-sm);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    max-width: 280px;
+}
+
+.item-box:hover {
+    border-color: var(--color-border-hover);
+    background: var(--color-surface-hover);
+}
+
+/* Meaning Integrity States */
+.item-box.integrity-stable {
+    border-color: #22c55e;
+}
+
+.item-box.integrity-mismatch {
+    border-color: #ef4444;
+}
+
+/* Flow-Level Edit Mode (Permission State) */
+.flow-box.flow-edit-mode .item-box {
+    box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.4);
+    transition: box-shadow var(--transition-fast);
+}
+
+.flow-box.flow-edit-mode .item-box:hover {
+    box-shadow: inset 0 0 0 2px rgba(59, 130, 246, 0.6);
+    cursor: text;
+}
+
+/* Active Item Editing State */
+.item-box.item-editing {
+    box-shadow: inset 0 0 0 2px rgba(59, 130, 246, 0.8) !important;
+}
+
+/* Contenteditable text styling */
+.item-content {
+    outline: none;
+}
+
+.item-box.item-editing .item-content {
+    cursor: text;
+}
+
+.item-index {
+    color: var(--color-text-muted);
+    user-select: none;
+}
+
+/* Dim other items when one is being edited */
+.flow-box.flow-edit-mode:has(.item-editing) .item-box:not(.item-editing) {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Edit Mode Tooltip (appears above edit button) */
+.edit-mode-tooltip {
+    position: fixed;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 11px;
+    font-weight: 400;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+}
+
+.edit-mode-tooltip.active {
+    opacity: 1;
+}
+
+/* Edit Mode Notification (bottom-right toast) */
+.edit-notification {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 12px;
+    z-index: 10000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.edit-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Flow Mode Boundary (System Map Style) */
+.flow-mode {
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.flow-mode *:not(.dimension-label-line) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Dimension label needs its own sizing */
+.flow-mode .dimension-label-line {
+  font-size: 0.58em !important;
+  line-height: 0.95 !important;
+}

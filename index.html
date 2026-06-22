@@ -334,6 +334,11 @@
   <script src="utils/invariants.js"></script>
   <script src="state/scaleStore.js"></script>
 
+  <!-- App State (Phase 4 - Modularization) -->
+  <script src="state/appState.js"></script>
+  <script src="state/selectors.js"></script>
+  <script src="state/mutations.js"></script>
+
   <!-- Logic Modules (Phase 2 - Pure Functions) -->
   <script src="logic/scaleGraph.js"></script>
   <script src="logic/scaleTransform.js"></script>
@@ -351,6 +356,50 @@
   <script src="controllers/flowController.js"></script>
   <script src="controllers/previewController.js"></script>
   <script src="controllers/flowEditorController.js"></script>
+
+  <!-- Data Modules -->
+  <script src="data/mockItems.js"></script>
+
+  <!-- Preview Pipeline -->
+  <script src="preview/scaleSelector.js"></script>
+  <script src="preview/questionnaireUI.js"></script>
+
+  <!-- UI Controls (Phase 5 - Modularization) -->
+  <script src="ui/controls/sidebarToggle.js"></script>
+  <script src="ui/controls/previewToggle.js"></script>
+  <script src="ui/fullscreen/fullscreen.js"></script>
+
+  <!-- Canvas Modules -->
+  <script src="canvas/panZoom.js"></script>
+  <script src="canvas/bounds.js"></script>
+
+  <!-- Flow Box Modules -->
+  <script src="flowbox/flowEditMode.js"></script>
+  <script src="flowbox/flowExport.js"></script>
+  <script src="flowbox/flowBranching.js"></script>
+  <script src="flowbox/flowEditor.js"></script>
+
+  <!-- Connections Modules -->
+  <script src="connections/flowConnections.js"></script>
+
+  <!-- Popup Modules -->
+  <script src="popups/rubricPopup.js"></script>
+
+  <!-- Bootstrap Modules (Phase 3) -->
+  <script src="bootstrap/domCache.js"></script>
+  <script src="bootstrap/offlineOverlay.js"></script>
+  <script src="bootstrap/uploadErrorModal.js"></script>
+  <script src="bootstrap/screenNav.js"></script>
+  <script src="bootstrap/initApp.js"></script>
+
+  <!-- Event Modules (Phase 3) -->
+  <script src="events/uploadEvents.js"></script>
+  <script src="events/sidebarEvents.js"></script>
+  <script src="events/previewEvents.js"></script>
+  <script src="events/questionnaireEvents.js"></script>
+  <script src="events/scaleSelectorEvents.js"></script>
+  <script src="events/fullscreenEvents.js"></script>
+  <script src="events/bindEvents.js"></script>
 
   <!-- Core Application -->
   <script src="api.js"></script>
