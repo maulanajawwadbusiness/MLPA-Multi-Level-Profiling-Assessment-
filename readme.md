@@ -16,12 +16,12 @@ The **MLPA (Multi-Level Profiling Assessment)** prototype is a web-based tool fo
 
 <table>
       <tr>
-        <td><img src="assets/screenshots/1.png" alt="Step 1" width="100%" /></td>
-        <td><img src="assets/screenshots/2.png" alt="Step 2" width="100%" /></td>
+        <td><img src="assets/screenshots/2.png" alt="Step 1" width="100%" /></td>
+        <td><img src="assets/screenshots/3.png" alt="Step 2" width="100%" /></td>
       </tr>
       <tr>
-        <td align="center">Step 1</td>
-        <td align="center">Step 2</td>
+        <td align="center">Preview Mode</td>
+        <td align="center">Edit Mode</td>
       </tr>
 </table>
 
