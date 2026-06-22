@@ -14,6 +14,16 @@ The **MLPA (Multi-Level Profiling Assessment)** prototype is a web-based tool fo
 
 ---
 
+What you need: Your own OpenAI API key. You can get it in [OpenAI Platform](https://platform.openai.com/api-keys).
+
+How to run in your computer:
+
+1. Download this repo, and put it in your folder.
+2. Open the `config.js` file. Change YOUR-API-KEY to your own OpenAI API key.
+3. Open `index.html`. Your app now run.
+
+---
+
 ## 2. Technology Stack
 
 - **Core:** Vanilla JavaScript (ES6+), HTML5, CSS3
