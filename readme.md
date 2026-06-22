@@ -1,6 +1,6 @@
 # MLPA Prototype Technical Documentation
 
-**Last Worked:** December 22, 2025  
+**Last Updated:** December 22, 2025  
 **Architecture Version:** Post-Phase 6 Modularization
 
 ![Welcome screen of the app](assets/screenshots/1.png)
@@ -16,8 +16,8 @@ The **MLPA (Multi-Level Profiling Assessment)** prototype is a web-based tool fo
 
 <table>
       <tr>
-        <td><img src="assets/screenshots/2.png" alt="Step 1" width="100%" /></td>
-        <td><img src="assets/screenshots/3.png" alt="Step 2" width="100%" /></td>
+        <td><img src="assets/screenshots/Preview Flowchart.gif" alt="Preview Mode" width="100%" /></td>
+        <td><img src="assets/screenshots/Preview Questionnaire.gif" alt="Edit Mode" width="100%" /></td>
       </tr>
       <tr>
         <td align="center">Preview Mode</td>
