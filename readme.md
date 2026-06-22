@@ -3,6 +3,8 @@
 **Last Updated:** December 22, 2025  
 **Architecture Version:** Post-Phase 6 Modularization
 
+![Welcome screen of the app](assets/screenshots/1.png)
+
 ---
 
 ## 1. Project Overview
@@ -11,6 +13,9 @@ The **MLPA (Multi-Level Profiling Assessment)** prototype is a web-based tool fo
 
 **Target Audience:** Psychometricians and researchers.  
 **Key Focus:** Modular architecture, clean UI, responsive flow editing, content-editable item editing, and semantic rubric visualization.
+
+    <img src="assets/screenshots/1.png" alt="Screenshot 1" width="49%" />
+    <img src="assets/screenshots/2.png" alt="Screenshot 2" width="49%" />
 
 ---
 
