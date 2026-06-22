@@ -165,7 +165,7 @@ const FlowEditMode = (function () {
         // Create tooltip element
         const tooltip = document.createElement('div');
         tooltip.className = 'edit-mode-tooltip';
-        tooltip.textContent = 'Klik item untuk mengedit teks';
+        tooltip.textContent = 'Click item to edit text';
         document.body.appendChild(tooltip);
 
         // Position above button (left-leaning)

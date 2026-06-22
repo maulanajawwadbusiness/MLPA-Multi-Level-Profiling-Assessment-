@@ -32,7 +32,7 @@ const QuestionnaireUI = (function () {
     function updateUI(state, elements) {
         if (!state.items || state.items.length === 0) {
             if (elements.itemText) {
-                elements.itemText.textContent = 'Tidak ada item untuk ditampilkan';
+                elements.itemText.textContent = 'No items to display';
             }
             return;
         }
@@ -46,7 +46,7 @@ const QuestionnaireUI = (function () {
         }
 
         // Update item text - try common column names
-        const textValue = item.item_text || item.text || item.question || item.pernyataan ||
+        const textValue = item.item_text || item.text || item.question || item.statement || item.pernyataan ||
             Object.values(item).find(v => typeof v === 'string' && v.length > 10) ||
             Object.values(item)[1] || 'No text available';
 

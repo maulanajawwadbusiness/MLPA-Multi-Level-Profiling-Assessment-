@@ -86,7 +86,7 @@ const FlowExport = (function () {
             row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(',')
         ).join('\n');
 
-        downloadCSV(csvContent, 'MLPA_Semua_Skala.csv');
+        downloadCSV(csvContent, 'MLPA_All_Scale.csv');
     }
 
     /**

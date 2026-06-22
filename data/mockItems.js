@@ -20,288 +20,288 @@
 // Each with dual rubric tracking (baseline_rubric, current_rubric)
 
 const MOCK_ITEMS = [
-    // === SKALA ASLI ===
-    // Dimension 1: Kepercayaan Diri (items 1-3)
+    // === ORIGINAL SCALE ===
+    // Dimension 1: Self-Confidence (items 1-3)
     {
         item_id: '1',
         origin_item_id: '1',
-        text: 'Saya merasa percaya diri dalam menghadapi tantangan baru',
-        baseline_rubric: ['Kepercayaan diri', 'Menghadapi tantangan', 'Merasa', 'Konteks: Situasi baru', 'Sudut pandang orang pertama'],
-        current_rubric: ['Kepercayaan diri', 'Menghadapi tantangan', 'Merasa', 'Konteks: Situasi baru', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri',
+        text: 'I feel confident in facing new challenges',
+        baseline_rubric: ['Self-confidence', 'Facing challenges', 'Feeling', 'Context: New situations', 'First-person perspective'],
+        current_rubric: ['Self-confidence', 'Facing challenges', 'Feeling', 'Context: New situations', 'First-person perspective'],
+        dimension: 'Self-Confidence',
         scale_group: 'asli'
     },
     {
         item_id: '2',
         origin_item_id: '2',
-        text: 'Saya merasa bernilai dan dihargai oleh orang lain',
-        baseline_rubric: ['Nilai diri', 'Dihargai', 'Merasa', 'Oleh orang lain', 'Sudut pandang orang pertama'],
-        current_rubric: ['Nilai diri', 'Dihargai', 'Merasa', 'Oleh orang lain', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri',
+        text: 'I feel valued and appreciated by others',
+        baseline_rubric: ['Self-worth', 'Valued', 'Feeling', 'By others', 'First-person perspective'],
+        current_rubric: ['Self-worth', 'Valued', 'Feeling', 'By others', 'First-person perspective'],
+        dimension: 'Self-Confidence',
         scale_group: 'asli'
     },
     {
         item_id: '3',
         origin_item_id: '3',
-        text: 'Saya dapat mengatasi masalah dengan baik dan tenang',
-        baseline_rubric: ['Mengatasi masalah', 'Ketenangan', 'Dapat', 'Sudut pandang orang pertama'],
-        current_rubric: ['Mengatasi masalah', 'Ketenangan', 'Dapat', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri',
+        text: 'I can handle problems calmly and effectively',
+        baseline_rubric: ['Problem-solving', 'Calmness', 'Able', 'First-person perspective'],
+        current_rubric: ['Problem-solving', 'Calmness', 'Able', 'First-person perspective'],
+        dimension: 'Self-Confidence',
         scale_group: 'asli'
     },
-    // Dimension 2: Regulasi Emosi (items 4-7)
+    // Dimension 2: Emotional Regulation (items 4-7)
     {
         item_id: '4',
         origin_item_id: '4',
-        text: 'Saya mampu mengekspresikan perasaan saya dengan jelas',
-        baseline_rubric: ['Ekspresi perasaan', 'Kejelasan', 'Mampu', 'Sudut pandang orang pertama'],
-        current_rubric: ['Ekspresi perasaan', 'Kejelasan', 'Mampu', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi',
+        text: 'I am able to express my feelings clearly',
+        baseline_rubric: ['Expression of feelings', 'Clarity', 'Able', 'First-person perspective'],
+        current_rubric: ['Expression of feelings', 'Clarity', 'Able', 'First-person perspective'],
+        dimension: 'Emotional Regulation',
         scale_group: 'asli'
     },
     {
         item_id: '5',
         origin_item_id: '5',
-        text: 'Saya merasa nyaman ketika berinteraksi dengan orang baru',
-        baseline_rubric: ['Kenyamanan', 'Interaksi sosial', 'Merasa', 'Konteks: Orang baru', 'Sudut pandang orang pertama'],
-        current_rubric: ['Kenyamanan', 'Interaksi sosial', 'Merasa', 'Konteks: Orang baru', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi',
+        text: 'I feel comfortable when interacting with new people',
+        baseline_rubric: ['Comfort', 'Social interaction', 'Feeling', 'Context: New people', 'First-person perspective'],
+        current_rubric: ['Comfort', 'Social interaction', 'Feeling', 'Context: New people', 'First-person perspective'],
+        dimension: 'Emotional Regulation',
         scale_group: 'asli'
     },
     {
         item_id: '6',
         origin_item_id: '6',
-        text: 'Saya dapat menerima kritik dengan sikap terbuka',
-        baseline_rubric: ['Penerimaan kritik', 'Keterbukaan', 'Dapat', 'Sudut pandang orang pertama'],
-        current_rubric: ['Penerimaan kritik', 'Keterbukaan', 'Dapat', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi',
+        text: 'I can accept criticism with an open attitude',
+        baseline_rubric: ['Acceptance of criticism', 'Openness', 'Able', 'First-person perspective'],
+        current_rubric: ['Acceptance of criticism', 'Openness', 'Able', 'First-person perspective'],
+        dimension: 'Emotional Regulation',
         scale_group: 'asli'
     },
     {
         item_id: '7',
         origin_item_id: '7',
-        text: 'Saya mampu mengelola stres dengan efektif',
-        baseline_rubric: ['Pengelolaan stres', 'Efektivitas', 'Mampu', 'Sudut pandang orang pertama'],
-        current_rubric: ['Pengelolaan stres', 'Efektivitas', 'Mampu', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi',
+        text: 'I am able to manage stress effectively',
+        baseline_rubric: ['Stress management', 'Effectiveness', 'Able', 'First-person perspective'],
+        current_rubric: ['Stress management', 'Effectiveness', 'Able', 'First-person perspective'],
+        dimension: 'Emotional Regulation',
         scale_group: 'asli'
     },
-    // Dimension 3: Optimisme (items 8-10)
+    // Dimension 3: Optimism (items 8-10)
     {
         item_id: '8',
         origin_item_id: '8',
-        text: 'Saya merasa optimis tentang masa depan saya',
-        baseline_rubric: ['Optimisme', 'Merasa', 'Waktu: Masa depan', 'Sudut pandang orang pertama'],
-        current_rubric: ['Optimisme', 'Merasa', 'Waktu: Masa depan', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme',
+        text: 'I feel optimistic about my future',
+        baseline_rubric: ['Optimism', 'Feeling', 'Time: Future', 'First-person perspective'],
+        current_rubric: ['Optimism', 'Feeling', 'Time: Future', 'First-person perspective'],
+        dimension: 'Optimism',
         scale_group: 'asli'
     },
     {
         item_id: '9',
         origin_item_id: '9',
-        text: 'Saya merasa puas dengan pencapaian hidup saya sejauh ini',
-        baseline_rubric: ['Kepuasan', 'Pencapaian Hidup', 'Merasa', 'Sudut Pandang Orang Pertama', 'Waktu: Sejauh Ini'],
-        current_rubric: ['Kepuasan', 'Pencapaian Hidup', 'Merasa', 'Sudut Pandang Orang Pertama', 'Waktu: Sejauh Ini'],
-        dimension: 'Optimisme',
+        text: 'I feel satisfied with my life achievements so far',
+        baseline_rubric: ['Satisfaction', 'Life achievements', 'Feeling', 'First-person perspective', 'Time: So far'],
+        current_rubric: ['Satisfaction', 'Life achievements', 'Feeling', 'First-person perspective', 'Time: So far'],
+        dimension: 'Optimism',
         scale_group: 'asli'
     },
     {
         item_id: '10',
         origin_item_id: '10',
-        text: 'Saya merasa memiliki tujuan hidup yang jelas',
-        baseline_rubric: ['Tujuan hidup', 'Merasa', 'Sudut pandang orang pertama'],
-        current_rubric: ['Tujuan hidup', 'Merasa', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme',
+        text: 'I feel I have a clear life purpose',
+        baseline_rubric: ['Life purpose', 'Feeling', 'First-person perspective'],
+        current_rubric: ['Life purpose', 'Feeling', 'First-person perspective'],
+        dimension: 'Optimism',
         scale_group: 'asli'
     },
 
-    // === SKALA GEN-Z (Branch 1) ===
+    // === GEN-Z SCALE (Branch 1) ===
     // Dimension 1
     {
         item_id: 'skala-asli-branch-1-item-1',
         origin_item_id: '1',
-        text: 'Saya berani mencoba hal baru tanpa ragu',
-        baseline_rubric: ['Kepercayaan diri', 'Menghadapi tantangan', 'Merasa', 'Konteks: Situasi baru', 'Sudut pandang orang pertama'],
-        current_rubric: ['Keberanian', 'Mencoba hal baru', 'Tanpa keraguan', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri & Keberanian',
+        text: 'I dare to try new things without hesitation',
+        baseline_rubric: ['Self-confidence', 'Facing challenges', 'Feeling', 'Context: New situations', 'First-person perspective'],
+        current_rubric: ['Courage', 'Trying new things', 'Without hesitation', 'First-person perspective'],
+        dimension: 'Self-Confidence & Courage',
         scale_group: 'genz'
     },
     {
         item_id: 'skala-asli-branch-1-item-2',
         origin_item_id: '2',
-        text: 'Saya merasa dihargai dan berarti di lingkungan saya',
-        baseline_rubric: ['Nilai diri', 'Dihargai', 'Merasa', 'Oleh orang lain', 'Sudut pandang orang pertama'],
-        current_rubric: ['Nilai diri', 'Dihargai', 'Merasa', 'Konteks: Lingkungan', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri & Keberanian',
+        text: 'I feel valued and matter in my environment',
+        baseline_rubric: ['Self-worth', 'Valued', 'Feeling', 'By others', 'First-person perspective'],
+        current_rubric: ['Self-worth', 'Valued', 'Feeling', 'Context: Environment', 'First-person perspective'],
+        dimension: 'Self-Confidence & Courage',
         scale_group: 'genz'
     },
     {
         item_id: 'skala-asli-branch-1-item-3',
         origin_item_id: '3',
-        text: 'Saya bisa mengatasi masalah dengan kepala dingin dan percaya diri',
-        baseline_rubric: ['Mengatasi masalah', 'Ketenangan', 'Dapat', 'Sudut pandang orang pertama'],
-        current_rubric: ['Mengatasi masalah', 'Ketenangan', 'Kepercayaan diri', 'Bisa', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri & Keberanian',
+        text: 'I can handle problems with a cool head and confidence',
+        baseline_rubric: ['Problem-solving', 'Calmness', 'Able', 'First-person perspective'],
+        current_rubric: ['Problem-solving', 'Calmness', 'Self-confidence', 'Can', 'First-person perspective'],
+        dimension: 'Self-Confidence & Courage',
         scale_group: 'genz'
     },
     // Dimension 2
     {
         item_id: 'skala-asli-branch-1-item-4',
         origin_item_id: '4',
-        text: 'Saya bisa mengekspresikan perasaan saya secara jujur dan jelas',
-        baseline_rubric: ['Ekspresi perasaan', 'Kejelasan', 'Mampu', 'Sudut pandang orang pertama'],
-        current_rubric: ['Ekspresi perasaan', 'Kejujuran', 'Kejelasan', 'Bisa', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi & Interaksi',
+        text: 'I can express my feelings honestly and clearly',
+        baseline_rubric: ['Expression of feelings', 'Clarity', 'Able', 'First-person perspective'],
+        current_rubric: ['Expression of feelings', 'Honesty', 'Clarity', 'Can', 'First-person perspective'],
+        dimension: 'Emotional Regulation & Interaction',
         scale_group: 'genz'
     },
     {
         item_id: 'skala-asli-branch-1-item-5',
         origin_item_id: '5',
-        text: 'Saya merasa nyaman dan tidak awkward saat bertemu orang baru',
-        baseline_rubric: ['Kenyamanan', 'Interaksi sosial', 'Merasa', 'Konteks: Orang baru', 'Sudut pandang orang pertama'],
-        current_rubric: ['Kenyamanan', 'Tidak canggung', 'Merasa', 'Konteks: Orang baru', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi & Interaksi',
+        text: 'I feel comfortable and not awkward meeting new people',
+        baseline_rubric: ['Comfort', 'Social interaction', 'Feeling', 'Context: New people', 'First-person perspective'],
+        current_rubric: ['Comfort', 'Not awkward', 'Feeling', 'Context: New people', 'First-person perspective'],
+        dimension: 'Emotional Regulation & Interaction',
         scale_group: 'genz'
     },
     {
         item_id: 'skala-asli-branch-1-item-6',
         origin_item_id: '6',
-        text: 'Saya bisa menerima kritik tanpa baper dan belajar darinya',
-        baseline_rubric: ['Penerimaan kritik', 'Keterbukaan', 'Dapat', 'Sudut pandang orang pertama'],
-        current_rubric: ['Penerimaan kritik', 'Stabilitas emosi', 'Belajar', 'Bisa', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi & Interaksi',
+        text: 'I can accept criticism without getting emotional and learn from it',
+        baseline_rubric: ['Acceptance of criticism', 'Openness', 'Able', 'First-person perspective'],
+        current_rubric: ['Acceptance of criticism', 'Emotional stability', 'Learning', 'Can', 'First-person perspective'],
+        dimension: 'Emotional Regulation & Interaction',
         scale_group: 'genz'
     },
     {
         item_id: 'skala-asli-branch-1-item-7',
         origin_item_id: '7',
-        text: 'Saya mampu mengatur stres agar tidak merasa overwhelmed',
-        baseline_rubric: ['Pengelolaan stres', 'Efektivitas', 'Mampu', 'Sudut pandang orang pertama'],
-        current_rubric: ['Pengelolaan stres', 'Menghindari kewalahan', 'Mampu', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi & Interaksi',
+        text: 'I can manage stress so I don\'t feel overwhelmed',
+        baseline_rubric: ['Stress management', 'Effectiveness', 'Able', 'First-person perspective'],
+        current_rubric: ['Stress management', 'Avoiding overwhelm', 'Able', 'First-person perspective'],
+        dimension: 'Emotional Regulation & Interaction',
         scale_group: 'genz'
     },
     // Dimension 3
     {
         item_id: 'skala-asli-branch-1-item-8',
         origin_item_id: '8',
-        text: 'Saya optimis tentang masa depan dan peluang yang akan datang',
-        baseline_rubric: ['Optimisme', 'Merasa', 'Waktu: Masa depan', 'Sudut pandang orang pertama'],
-        current_rubric: ['Optimisme', 'Peluang', 'Merasa', 'Waktu: Masa depan', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme dan Tujuan (Goals)',
+        text: 'I am optimistic about the future and opportunities ahead',
+        baseline_rubric: ['Optimism', 'Feeling', 'Time: Future', 'First-person perspective'],
+        current_rubric: ['Optimism', 'Opportunities', 'Feeling', 'Time: Future', 'First-person perspective'],
+        dimension: 'Optimism and Goals',
         scale_group: 'genz'
     },
     {
         item_id: 'skala-asli-branch-1-item-9',
         origin_item_id: '9',
-        text: 'Saya merasa bangga dan puas dengan pencapaian saya sejauh ini',
-        baseline_rubric: ['Kepuasan', 'Pencapaian hidup', 'Merasa', 'Waktu: Sejauh ini', 'Sudut pandang orang pertama'],
-        current_rubric: ['Kepuasan', 'Kebanggaan', 'Pencapaian', 'Merasa', 'Waktu: Sejauh ini', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme dan Tujuan (Goals)',
+        text: 'I feel proud and satisfied with my achievements so far',
+        baseline_rubric: ['Satisfaction', 'Life achievements', 'Feeling', 'Time: So far', 'First-person perspective'],
+        current_rubric: ['Satisfaction', 'Pride', 'Achievements', 'Feeling', 'Time: So far', 'First-person perspective'],
+        dimension: 'Optimism and Goals',
         scale_group: 'genz'
     },
     {
         item_id: 'skala-asli-branch-1-item-10',
         origin_item_id: '10',
-        text: 'Saya memiliki tujuan hidup atau goals yang jelas untuk dicapai',
-        baseline_rubric: ['Tujuan hidup', 'Kejelasan', 'Memiliki', 'Sudut pandang orang pertama'],
-        current_rubric: ['Tujuan hidup', 'Goals', 'Kejelasan', 'Memiliki', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme dan Tujuan (Goals)',
+        text: 'I have clear life goals to achieve',
+        baseline_rubric: ['Life purpose', 'Clarity', 'Having', 'First-person perspective'],
+        current_rubric: ['Life purpose', 'Goals', 'Clarity', 'Having', 'First-person perspective'],
+        dimension: 'Optimism and Goals',
         scale_group: 'genz'
     },
 
-    // === SKALA BOOMER (Branch 2) ===
+    // === BOOMER SCALE (Branch 2) ===
     // Dimension 1
     {
         item_id: 'skala-asli-branch-2-item-1',
         origin_item_id: '1',
-        text: 'Saya merasa percaya diri menghadapi perubahan dan tantangan yang muncul pada usia saya',
-        baseline_rubric: ['Kepercayaan diri', 'Menghadapi tantangan', 'Merasa', 'Konteks: Situasi baru', 'Sudut pandang orang pertama'],
-        current_rubric: ['Kepercayaan diri', 'Menghadapi perubahan', 'Menghadapi tantangan', 'Merasa', 'Konteks: Usia', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri pada Usia Boomer',
+        text: 'I feel confident facing the changes and challenges that come at my age',
+        baseline_rubric: ['Self-confidence', 'Facing challenges', 'Feeling', 'Context: New situations', 'First-person perspective'],
+        current_rubric: ['Self-confidence', 'Facing changes', 'Facing challenges', 'Feeling', 'Context: Age', 'First-person perspective'],
+        dimension: 'Self-Confidence at Boomer Age',
         scale_group: 'boomer'
     },
     {
         item_id: 'skala-asli-branch-2-item-2',
         origin_item_id: '2',
-        text: 'Saya merasa dihargai dan dianggap berarti oleh keluarga dan komunitas saya',
-        baseline_rubric: ['Nilai diri', 'Dihargai', 'Merasa', 'Oleh orang lain', 'Sudut pandang orang pertama'],
-        current_rubric: ['Nilai diri', 'Dihargai', 'Merasa', 'Konteks: Keluarga', 'Konteks: Komunitas', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri pada Usia Boomer',
+        text: 'I feel valued and meaningful to my family and community',
+        baseline_rubric: ['Self-worth', 'Valued', 'Feeling', 'By others', 'First-person perspective'],
+        current_rubric: ['Self-worth', 'Valued', 'Feeling', 'Context: Family', 'Context: Community', 'First-person perspective'],
+        dimension: 'Self-Confidence at Boomer Age',
         scale_group: 'boomer'
     },
     {
         item_id: 'skala-asli-branch-2-item-3',
         origin_item_id: '3',
-        text: 'Saya mampu menyelesaikan masalah sehari-hari dan menghadapi situasi sulit dengan tenang',
-        baseline_rubric: ['Mengatasi masalah', 'Ketenangan', 'Dapat', 'Sudut pandang orang pertama'],
-        current_rubric: ['Menyelesaikan masalah', 'Menghadapi situasi sulit', 'Ketenangan', 'Mampu', 'Konteks: Sehari-hari', 'Sudut pandang orang pertama'],
-        dimension: 'Kepercayaan Diri pada Usia Boomer',
+        text: 'I am able to solve daily problems and handle difficult situations calmly',
+        baseline_rubric: ['Problem-solving', 'Calmness', 'Able', 'First-person perspective'],
+        current_rubric: ['Solving problems', 'Handling difficult situations', 'Calmness', 'Able', 'Context: Daily life', 'First-person perspective'],
+        dimension: 'Self-Confidence at Boomer Age',
         scale_group: 'boomer'
     },
     // Dimension 2
     {
         item_id: 'skala-asli-branch-2-item-4',
         origin_item_id: '4',
-        text: 'Saya dapat mengungkapkan perasaan saya kepada keluarga atau teman dengan jujur dan tepat',
-        baseline_rubric: ['Ekspresi perasaan', 'Kejelasan', 'Mampu', 'Sudut pandang orang pertama'],
-        current_rubric: ['Ekspresi perasaan', 'Kejujuran', 'Ketepatan', 'Dapat', 'Konteks: Keluarga/teman', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi dan Interaksi Sosial',
+        text: 'I can express my feelings to family or friends honestly and accurately',
+        baseline_rubric: ['Expression of feelings', 'Clarity', 'Able', 'First-person perspective'],
+        current_rubric: ['Expression of feelings', 'Honesty', 'Accuracy', 'Can', 'Context: Family/friends', 'First-person perspective'],
+        dimension: 'Emotional Regulation and Social Interaction',
         scale_group: 'boomer'
     },
     {
         item_id: 'skala-asli-branch-2-item-5',
         origin_item_id: '5',
-        text: 'Saya merasa nyaman saat berinteraksi dengan orang baru, termasuk yang berasal dari generasi berbeda',
-        baseline_rubric: ['Kenyamanan', 'Interaksi sosial', 'Merasa', 'Konteks: Orang baru', 'Sudut pandang orang pertama'],
-        current_rubric: ['Kenyamanan', 'Interaksi sosial', 'Merasa', 'Konteks: Orang baru', 'Konteks: Generasi berbeda', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi dan Interaksi Sosial',
+        text: 'I feel comfortable interacting with new people, including those from different generations',
+        baseline_rubric: ['Comfort', 'Social interaction', 'Feeling', 'Context: New people', 'First-person perspective'],
+        current_rubric: ['Comfort', 'Social interaction', 'Feeling', 'Context: New people', 'Context: Different generations', 'First-person perspective'],
+        dimension: 'Emotional Regulation and Social Interaction',
         scale_group: 'boomer'
     },
     {
         item_id: 'skala-asli-branch-2-item-6',
         origin_item_id: '6',
-        text: 'Saya menerima masukan atau kritik dari orang lain dengan sikap terbuka dan bijaksana',
-        baseline_rubric: ['Penerimaan kritik', 'Keterbukaan', 'Dapat', 'Sudut pandang orang pertama'],
-        current_rubric: ['Penerimaan kritik', 'Keterbukaan', 'Kebijaksanaan', 'Menerima', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi dan Interaksi Sosial',
+        text: 'I accept input or criticism from others with an open and wise attitude',
+        baseline_rubric: ['Acceptance of criticism', 'Openness', 'Able', 'First-person perspective'],
+        current_rubric: ['Acceptance of criticism', 'Openness', 'Wisdom', 'Accepting', 'First-person perspective'],
+        dimension: 'Emotional Regulation and Social Interaction',
         scale_group: 'boomer'
     },
     {
         item_id: 'skala-asli-branch-2-item-7',
         origin_item_id: '7',
-        text: 'Saya mampu mengelola stres terkait kesehatan, tanggung jawab keluarga, atau perubahan hidup secara efektif',
-        baseline_rubric: ['Pengelolaan stres', 'Efektivitas', 'Mampu', 'Sudut pandang orang pertama'],
-        current_rubric: ['Pengelolaan stres', 'Efektivitas', 'Mampu', 'Konteks: Kesehatan', 'Konteks: Keluarga', 'Konteks: Perubahan hidup', 'Sudut pandang orang pertama'],
-        dimension: 'Regulasi Emosi dan Interaksi Sosial',
+        text: 'I am able to effectively manage stress related to health, family responsibilities, or life changes',
+        baseline_rubric: ['Stress management', 'Effectiveness', 'Able', 'First-person perspective'],
+        current_rubric: ['Stress management', 'Effectiveness', 'Able', 'Context: Health', 'Context: Family', 'Context: Life changes', 'First-person perspective'],
+        dimension: 'Emotional Regulation and Social Interaction',
         scale_group: 'boomer'
     },
     // Dimension 3
     {
         item_id: 'skala-asli-branch-2-item-8',
         origin_item_id: '8',
-        text: 'Saya merasa optimis tentang kualitas hidup dan kesejahteraan saya di masa mendatang',
-        baseline_rubric: ['Optimisme', 'Merasa', 'Waktu: Masa depan', 'Sudut pandang orang pertama'],
-        current_rubric: ['Optimisme', 'Kualitas hidup', 'Kesejahteraan', 'Merasa', 'Waktu: Masa depan', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme dan Makna Hidup',
+        text: 'I feel optimistic about my quality of life and well-being in the future',
+        baseline_rubric: ['Optimism', 'Feeling', 'Time: Future', 'First-person perspective'],
+        current_rubric: ['Optimism', 'Quality of life', 'Well-being', 'Feeling', 'Time: Future', 'First-person perspective'],
+        dimension: 'Optimism and Life Meaning',
         scale_group: 'boomer'
     },
     {
         item_id: 'skala-asli-branch-2-item-9',
         origin_item_id: '9',
-        text: 'Saya merasa puas dan bangga dengan pencapaian hidup serta peran yang telah saya jalani',
-        baseline_rubric: ['Kepuasan', 'Pencapaian hidup', 'Merasa', 'Waktu: Sejauh ini', 'Sudut pandang orang pertama'],
-        current_rubric: ['Kepuasan', 'Kebanggaan', 'Pencapaian hidup', 'Peran', 'Merasa', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme dan Makna Hidup',
+        text: 'I feel satisfied and proud of my life achievements and the roles I have played',
+        baseline_rubric: ['Satisfaction', 'Life achievements', 'Feeling', 'Time: So far', 'First-person perspective'],
+        current_rubric: ['Satisfaction', 'Pride', 'Life achievements', 'Roles', 'Feeling', 'First-person perspective'],
+        dimension: 'Optimism and Life Meaning',
         scale_group: 'boomer'
     },
     {
         item_id: 'skala-asli-branch-2-item-10',
         origin_item_id: '10',
-        text: 'Saya memiliki tujuan atau kegiatan yang memberi arti dan semangat pada kehidupan saya saat ini',
-        baseline_rubric: ['Tujuan hidup', 'Kejelasan', 'Memiliki', 'Sudut pandang orang pertama'],
-        current_rubric: ['Tujuan hidup', 'Kegiatan bermakna', 'Semangat', 'Memiliki', 'Waktu: Saat ini', 'Sudut pandang orang pertama'],
-        dimension: 'Optimisme dan Makna Hidup',
+        text: 'I have purposes or activities that give meaning and spirit to my life today',
+        baseline_rubric: ['Life purpose', 'Clarity', 'Having', 'First-person perspective'],
+        current_rubric: ['Life purpose', 'Meaningful activities', 'Spirit', 'Having', 'Time: Currently', 'First-person perspective'],
+        dimension: 'Optimism and Life Meaning',
         scale_group: 'boomer'
     }
 ];
@@ -321,14 +321,14 @@ function createMockScale() {
 
     // Group items by dimension
     const dimensions = [
-        { name: 'Kepercayaan Diri', items: itemsAsli.filter(i => i.dimension === 'Kepercayaan Diri') },
-        { name: 'Regulasi Emosi', items: itemsAsli.filter(i => i.dimension === 'Regulasi Emosi') },
-        { name: 'Optimisme', items: itemsAsli.filter(i => i.dimension === 'Optimisme') }
+        { name: 'Self-Confidence', items: itemsAsli.filter(i => i.dimension === 'Self-Confidence') },
+        { name: 'Emotional Regulation', items: itemsAsli.filter(i => i.dimension === 'Emotional Regulation') },
+        { name: 'Optimism', items: itemsAsli.filter(i => i.dimension === 'Optimism') }
     ];
 
     return {
         scale_id: 'skala-asli',
-        scale_name: 'Skala Asli - Skala Kepercayaan Diri',
+        scale_name: 'Original Scale - Self-Confidence Scale',
         parent_scale_id: null,
         is_root: true,
         expanded: false,

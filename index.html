@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -13,24 +13,24 @@
   <!-- Screen 1: Welcome -->
   <section id="screen-1" class="screen welcome-screen active">
     <div class="upload-zone" id="upload-zone" role="button" tabindex="0"
-      aria-label="Unggah file atau tarik file ke sini">
+      aria-label="Upload file or drag file here">
       <div class="content-block">
         <h1 class="title">
-          <span class="title-sub">Prototype untuk</span>
+          <span class="title-sub">Prototype for</span>
           <span class="title-main">MLPA (Multi-Level Profiling Assessment)</span>
         </h1>
         <img src="assets/drag_and_drop_icon.png" alt="" class="drop-icon" aria-hidden="true">
         <p class="instruction">
-          Unggah file CSV,<br>
-          atau tarik file ke sini
+          Upload CSV file,<br>
+          or drag file here
         </p>
         <p class="error-message" id="error-message" role="alert" aria-live="polite"></p>
-        <button class="test-api-btn" id="test-mock-btn">Tes Prototype dengan Data Mockup yang Ada</button>
+        <button class="test-api-btn" id="test-mock-btn">Run Demo</button>
       </div>
       <!-- Loading overlay -->
       <div class="upload-loading-overlay" id="upload-loading-overlay">
         <div class="upload-spinner"></div>
-        <span class="upload-loading-text" id="upload-loading-text">Memproses skala.</span>
+        <span class="upload-loading-text" id="upload-loading-text">Processing scale.</span>
       </div>
     </div>
     <input type="file" id="file-input" class="file-input" accept=".csv" aria-hidden="true">
@@ -45,7 +45,7 @@
         <button id="sidebar-toggle" class="sidebar-toggle-btn" aria-label="Toggle sidebar">
           <img src="assets/sidebar_hide_icon.png" alt="" class="sidebar-icon sidebar-hide-icon">
           <img src="assets/sidebar_show_icon.png" alt="" class="sidebar-icon sidebar-show-icon">
-          <span class="sidebar-toggle-tooltip">Sembunyikan sidebar</span>
+          <span class="sidebar-toggle-tooltip">Hide sidebar</span>
         </button>
       </div>
 
@@ -55,23 +55,23 @@
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
             <circle cx="12" cy="12" r="3" />
           </svg>
-          <span class="nav-text">Tampilan Preview</span>
+          <span class="nav-text">Preview Mode</span>
         </button>
         <button class="nav-item" data-screen="3">
           <img src="assets/tampilan_edit_icon.png" alt="" class="nav-icon nav-icon-img">
-          <span class="nav-text">Tampilan Edit</span>
+          <span class="nav-text">Edit Mode</span>
         </button>
       </nav>
 
       <div class="sidebar-footer">
-        <span class="version-text">Versi 0.1 Beta Prototype</span>
+        <span class="version-text">Version 0.1 Beta Prototype</span>
       </div>
     </aside>
 
     <!-- Show Sidebar Button (Visible when sidebar collapsed) -->
-    <button id="sidebar-show-btn" class="sidebar-show-btn" aria-label="Tampilkan sidebar">
+    <button id="sidebar-show-btn" class="sidebar-show-btn" aria-label="Show sidebar">
       <img src="assets/sidebar_show_icon.png" alt="" class="sidebar-show-icon-img">
-      <span class="sidebar-show-tooltip">Tampilkan sidebar</span>
+      <span class="sidebar-show-tooltip">Show sidebar</span>
     </button>
 
     <!-- Main Content Area -->
@@ -90,19 +90,19 @@
       </button>
 
       <!-- Preview Mode Return Button -->
-      <button id="preview-return" class="preview-return" aria-label="Kembali dari preview mode">
+      <button id="preview-return" class="preview-return" aria-label="Return from preview mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M15 18l-6-6 6-6" />
         </svg>
-        <span class="preview-return-tooltip">Kembali ke tampilan asli</span>
+        <span class="preview-return-tooltip">Return to original view</span>
       </button>
 
-      <!-- Screen 2: Tampilan Preview -->
+      <!-- Screen 2: Preview Mode -->
       <section id="screen-2" class="screen inner-screen active">
         <div class="screen-header admin-ui">
-          <h2 class="screen-title">Tampilan Preview Kuesioner</h2>
+          <h2 class="screen-title">Questionnaire Preview</h2>
           <button id="scale-selector-btn" class="scale-selector-btn">
-            <span id="scale-selector-label">Pilih Skala</span>
+            <span id="scale-selector-label">Select Scale</span>
             <svg class="scale-selector-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 9l6 6 6-6" />
             </svg>
@@ -118,7 +118,7 @@
 
           <!-- Likert Scale -->
           <div class="likert-scale">
-            <span class="likert-label left">Sangat Tidak Setuju</span>
+            <span class="likert-label left">Strongly Disagree</span>
             <div class="likert-dots">
               <button class="likert-dot" data-value="1">
                 <span class="dot"></span>
@@ -141,7 +141,7 @@
                 <span class="dot-label">5</span>
               </button>
             </div>
-            <span class="likert-label right">Sangat Setuju</span>
+            <span class="likert-label right">Strongly Agree</span>
           </div>
 
           <!-- Navigation Arrows -->
@@ -150,10 +150,10 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
-              <span>Sebelum</span>
+              <span>Previous</span>
             </button>
             <button id="next-btn" class="nav-arrow next" aria-label="Next item">
-              <span>Selanjutnya</span>
+              <span>Next</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 18l6-6-6-6" />
               </svg>
@@ -163,17 +163,17 @@
 
         <!-- Completion Screen -->
         <div id="completion" class="completion hidden">
-          <p class="completion-text">Terima kasih telah menjawab kuesioner kami!</p>
+          <p class="completion-text">Thank you for completing our questionnaire!</p>
           <div class="admin-report admin-ui">
-            <p class="report-title">Laporan untuk Admin:</p>
-            <p class="report-score">Skor Akhir: <span id="final-score">0</span>/<span id="max-score">50</span></p>
+            <p class="report-title">Admin Report:</p>
+            <p class="report-score">Final Score: <span id="final-score">0</span>/<span id="max-score">50</span></p>
           </div>
         </div>
 
         <!-- Reset Button (Bottom Left of Screen) -->
-        <button id="reset-btn" class="reset-icon-btn" aria-label="Mulai ulang kuesioner">
+        <button id="reset-btn" class="reset-icon-btn" aria-label="Restart questionnaire">
           <img src="assets/reset_icon.png" alt="" class="reset-icon">
-          <span class="reset-tooltip">Mulai ulang kuesioner</span>
+          <span class="reset-tooltip">Restart questionnaire</span>
         </button>
       </section>
 
@@ -182,8 +182,8 @@
         <div class="scale-selector-backdrop"></div>
         <div class="scale-selector-window">
           <div class="scale-selector-header">
-            <span class="scale-selector-title">Pilih Skala untuk Preview</span>
-            <button id="scale-selector-close" class="scale-selector-close" aria-label="Tutup">
+            <span class="scale-selector-title">Select Scale for Preview</span>
+            <button id="scale-selector-close" class="scale-selector-close" aria-label="Close">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>
@@ -196,34 +196,34 @@
         </div>
       </div>
 
-      <!-- Screen 3: Tampilan Edit -->
+      <!-- Screen 3: Edit Mode -->
       <section id="screen-3" class="screen inner-screen flow-screen">
         <!-- Screen Title -->
-        <h2 class="flow-screen-title">Tampilan Edit</h2>
+        <h2 class="flow-screen-title">Edit Mode</h2>
 
         <!-- Global Export Button -->
-        <button id="global-export-btn" class="global-export-btn" aria-label="Simpan seluruh Skala sebagai CSV">
+        <button id="global-export-btn" class="global-export-btn" aria-label="Save all Scales as CSV">
           <img src="assets/save_icon.png" alt="" class="global-export-icon">
-          <span class="global-export-tooltip">Simpan seluruh Skala sebagai CSV</span>
+          <span class="global-export-tooltip">Save all Scales as CSV</span>
         </button>
 
         <!-- Flow Canvas (Pannable) -->
         <div id="flow-canvas" class="flow-canvas">
           <!-- Color Legend (fixed to canvas viewport) -->
           <div class="color-legend">
-            <div class="color-legend-title">Kode Warna</div>
+            <div class="color-legend-title">Color Code</div>
             <div class="color-legend-items">
               <div class="color-legend-item">
                 <span class="color-dot green"></span>
-                <span class="color-legend-text">Rubrik cocok dengan item asli</span>
+                <span class="color-legend-text">Rubric matches original item</span>
               </div>
               <div class="color-legend-item">
                 <span class="color-dot red"></span>
-                <span class="color-legend-text">Rubrik tidak cocok dengan item asli</span>
+                <span class="color-legend-text">Rubric does not match original item</span>
               </div>
               <div class="color-legend-item">
                 <span class="color-dot blue"></span>
-                <span class="color-legend-text">Mode edit</span>
+                <span class="color-legend-text">Edit mode</span>
               </div>
             </div>
           </div>
@@ -241,8 +241,8 @@
             <!-- Branching Chat Popup (inside world layer for pan consistency) -->
             <div id="branching-popup" class="branching-popup hidden">
               <div class="branching-popup-header">
-                <span class="branching-popup-title">Cabangkan Skala ke Versi Baru</span>
-                <button id="branching-popup-close" class="branching-popup-close" aria-label="Tutup">
+                <span class="branching-popup-title">Branch Scale to New Version</span>
+                <button id="branching-popup-close" class="branching-popup-close" aria-label="Close">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 6L6 18M6 6l12 12" />
                   </svg>
@@ -250,11 +250,11 @@
               </div>
               <div class="branching-popup-body">
                 <textarea id="branching-input" class="branching-input"
-                  placeholder="Contoh: adaptasi untuk Gen-Z, atau adaptasi budaya Padang..."></textarea>
+                  placeholder="Example: adaptation for Gen-Z, or cultural adaptation..."></textarea>
               </div>
               <div class="branching-popup-footer">
                 <button id="branching-submit" class="branching-submit">
-                  <span>Buat Cabang Baru</span>
+                  <span>Make New Branch</span>
                 </button>
               </div>
             </div>
@@ -286,19 +286,19 @@
   <div id="offline-overlay" class="offline-overlay hidden">
     <div class="offline-content">
       <div class="offline-icon">📡</div>
-      <h2 class="offline-title">Tidak Ada Koneksi Internet</h2>
-      <p class="offline-message">Hubungkan ke internet untuk menggunakan MLPA</p>
+      <h2 class="offline-title">No Internet Connection</h2>
+      <p class="offline-message">Connect to the internet to use MLPA</p>
     </div>
   </div>
 
   <!-- Upload Error Modal -->
   <div id="upload-error-modal" class="upload-error-modal hidden">
     <div class="upload-error-content">
-      <h2 class="upload-error-title">Gagal Memproses Skala</h2>
-      <p class="upload-error-message" id="upload-error-message">Koneksi terputus. Periksa internet Anda.</p>
+      <h2 class="upload-error-title">Failed to Process Scale</h2>
+      <p class="upload-error-message" id="upload-error-message">Connection lost. Check your internet.</p>
       <div class="upload-error-actions">
-        <button id="upload-error-mock" class="upload-error-btn primary">Gunakan Data Mockup</button>
-        <button id="upload-error-close" class="upload-error-btn secondary">Tutup</button>
+        <button id="upload-error-mock" class="upload-error-btn primary">Use Mock Data</button>
+        <button id="upload-error-close" class="upload-error-btn secondary">Close</button>
       </div>
     </div>
   </div>
@@ -306,12 +306,12 @@
   <!-- Dimension Grouping Confirmation Modal -->
   <div id="dimension-confirm-modal" class="upload-error-modal hidden">
     <div class="upload-error-content">
-      <h2 class="upload-error-title">Item Tidak Memiliki Dimensi</h2>
-      <p class="upload-error-message">Item anda belum dibagi dalam kategori dimensi. GPT akan mengelompokkan item ke
-        dalam kategori dimensi agar bisa diproses oleh program. Lanjutkan?</p>
+      <h2 class="upload-error-title">Items Have No Dimensions</h2>
+      <p class="upload-error-message">Your items are not yet divided into dimension categories. GPT will group items into
+        dimension categories for processing. Continue?</p>
       <div class="upload-error-actions">
-        <button id="dimension-confirm-yes" class="upload-error-btn primary">Lanjutkan</button>
-        <button id="dimension-confirm-no" class="upload-error-btn secondary">Batal</button>
+        <button id="dimension-confirm-yes" class="upload-error-btn primary">Continue</button>
+        <button id="dimension-confirm-no" class="upload-error-btn secondary">Cancel</button>
       </div>
     </div>
   </div>

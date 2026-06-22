@@ -222,7 +222,7 @@ const FlowEditor = (function () {
                     // Confirm any active edit before exiting
                     if (window.FlowEditMode) {
                         window.FlowEditMode.confirmOrRevertEdit(stateRef.canvasState);
-                        window.FlowEditMode.showNotification('Edit item dinonaktifkan');
+                        window.FlowEditMode.showNotification('Edit item disabled');
                     }
                     flowBox.classList.remove('flow-edit-mode');
                 }
@@ -260,7 +260,7 @@ const FlowEditor = (function () {
             if (activeEditBox && !activeEditBox.contains(e.target)) {
                 activeEditBox.classList.remove('flow-edit-mode');
                 if (window.FlowEditMode) {
-                    window.FlowEditMode.showNotification('Edit item dinonaktifkan');
+                    window.FlowEditMode.showNotification('Edit item disabled');
                 }
             }
         });
@@ -375,7 +375,7 @@ const FlowEditor = (function () {
 
         if (!prep.canDelete) {
             if (prep.error === 'root_protected') {
-                alert('Skala utama (Root) tidak dapat dihapus.');
+                alert('The main scale (Root) cannot be deleted.');
             }
             return;
         }
@@ -383,8 +383,8 @@ const FlowEditor = (function () {
         // Confirmation
         const count = prep.count;
         const message = count > 1
-            ? `Apakah Anda yakin ingin menghapus skala ini dan ${count - 1} turunannya?`
-            : `Apakah Anda yakin ingin menghapus skala ini?`;
+            ? `Are you sure you want to delete this scale and ${count - 1} derivative(s)?`
+            : `Are you sure you want to delete this scale?`;
 
         if (!confirm(message)) return;
 

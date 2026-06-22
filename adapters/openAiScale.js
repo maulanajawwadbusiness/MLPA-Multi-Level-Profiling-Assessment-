@@ -28,7 +28,7 @@
 function buildAdaptScalePrompt(sourceScaleName, sourceDimensions, adaptationIntent) {
     return {
         role: 'user',
-        content: `You are adapting a psychometric scale for a specific audience.
+        content: `You are adapting a psychometric scale for a specific audience. The entire conversation is in English. Input will be in English. Output in English.
 
 SOURCE SCALE NAME:
 ${sourceScaleName}
@@ -71,8 +71,8 @@ Rules for CURRENT_RUBRIC (CRITICAL):
 - Extract: key concepts, actions, emotions, context, perspective from YOUR sentence
 
 Example:
-If you write: "Saya berani mencoba hal baru (misalnya ikut kegiatan kampus) tanpa banyak ragu."
-Your current_rubric should be: ["Keberanian", "Mencoba hal baru", "Kegiatan kampus", "Tanpa ragu", "Sudut pandang orang pertama"]
+If you write: "I dare to try new things (e.g., join campus activities) without much hesitation."
+Your current_rubric should be: ["Courage", "Trying new things", "Campus activities", "Without hesitation", "First-person perspective"]
 
 These are RAW traits from YOUR sentence - NOT copied from any original.
 
@@ -90,7 +90,7 @@ These are RAW traits from YOUR sentence - NOT copied from any original.
 function buildStructureCSVPrompt(csvItems, filename) {
     return {
         role: 'user',
-        content: `You are structuring a psychometric scale from CSV data.
+        content: `You are structuring a psychometric scale from CSV data. The entire conversation is in English. Input will be in English. Output in English.
 
 FILENAME: ${filename}
 ITEM COUNT: ${csvItems.length}
@@ -107,7 +107,7 @@ Determine if this CSV contains valid psychometric scale items.
 
 A VALID scale has:
 - Multiple items (statements/questions) that measure psychological traits
-- Items are self-report statements (e.g., "Saya merasa...", "Saya sering...", "Saya mampu...")
+- Items are self-report statements (e.g., "I feel...", "I often...", "I am able to...")
 - Items relate to personality, behavior, emotions, attitudes, or abilities
 
 INVALID (reject these):
@@ -127,9 +127,9 @@ Also check if the CSV already has dimensions:
 - If there are holes or missing data, skip them, do NOT fill them with made-up items
 
 TASK 1 - SCALE NAME:
-- If filename clearly indicates scale name (e.g., "Skala Kemalasan.csv"), extract it
+- If filename clearly indicates scale name (e.g., "Laziness Scale.csv"), extract it
 - If filename is unsensible, infer from items what psychological construct is measured
-- Return a proper Indonesian scale name (e.g., "Skala Kepercayaan Diri")
+- Return a proper English scale name (e.g., "Self-Confidence Scale")
 
 TASK 2 - DIMENSIONS:
 - If has_dimensions is true, use the existing dimension names from the CSV
@@ -137,49 +137,49 @@ TASK 2 - DIMENSIONS:
 - Name each dimension after its core psychological theme
 
 TASK 3 - RUBRIC EXTRACTION (CRITICAL):
-Extract "sifat dasar" (basic traits) from the core meaning of each item.
+Extract "basic traits" from the core meaning of each item.
 
 TRAIT COUNT BASED ON COMPLEXITY:
-- **Simple sentences** (3 traits): "Aku merasa rajin", "Aku merasa malas"
+- **Simple sentences** (3 traits): "I feel diligent", "I feel lazy"
   → 1 psych trait + 1 feeling verb + perspective
   
-- **Complex sentences** (4-7 traits): "Saya merasa percaya diri dalam menghadapi tantangan baru"
+- **Complex sentences** (4-7 traits): "I feel confident in facing new challenges"
   → Multiple psych traits + feeling verbs + time anchor + essential modifiers + perspective
 
 TRAIT TYPES TO EXTRACT:
 1. **PSYCH TRAIT(S)** - Core psychological construct(s)
-   - Convert adjectives to abstract nouns: "percaya diri" → "Kepercayaan diri", "rajin" → "Kerajinan"
-   - Complex sentences may have MULTIPLE psych traits (e.g., "Kepercayaan diri", "Menghadapi tantangan")
+   - Convert adjectives to abstract nouns: "confident" → "Confidence", "diligent" → "Diligence"
+   - Complex sentences may have MULTIPLE psych traits (e.g., "Confidence", "Facing challenges")
    
 2. **FEELING VERB(S)** - How the person relates to the trait(s)
-   - INFERRED from sentence, not literal: "Merasa", "Mampu", "Berpikir", "Yakin", "Melakukan"
+   - INFERRED from sentence, not literal: "Feeling", "Able", "Thinking", "Confident", "Doing"
    - Complex sentences may have multiple feeling verbs for different aspects
    
-3. **PERSPECTIVE** - Always include (e.g., "Sudut pandang orang pertama")
+3. **PERSPECTIVE** - Always include (e.g., "First-person perspective")
 
-4. **TIME ANCHOR** - If present (e.g., "Waktu: Sejauh ini", "Waktu: Saat ini", "Waktu: Masa depan")
+4. **TIME ANCHOR** - If present (e.g., "Time: So far", "Time: Currently", "Time: Future")
 
 5. **ESSENTIAL MODIFIERS** - Key qualifiers that change meaning
-   - Context: "Dalam situasi baru", "Dengan orang lain"
-   - Scope: "Di lingkungan kerja", "Dalam keluarga"
+   - Context: "In new situations", "With others"
+   - Scope: "At work", "In family"
    - Only include if they fundamentally change the psychological meaning
 
 EXAMPLES:
 
 Simple (3 traits):
-"Aku merasa rajin"
-→ ["Kerajinan", "Merasa", "Sudut pandang orang pertama"]
+"I feel diligent"
+→ ["Diligence", "Feeling", "First-person perspective"]
 
 Complex (5 traits):
-"Saya merasa percaya diri dalam menghadapi tantangan baru"
-→ ["Kepercayaan diri", "Menghadapi tantangan", "Merasa", "Konteks: Situasi baru", "Sudut pandang orang pertama"]
+"I feel confident in facing new challenges"
+→ ["Confidence", "Facing challenges", "Feeling", "Context: New situations", "First-person perspective"]
 
 Complex (6 traits):
-"Saya merasa bernilai dan dihargai oleh orang lain"
-→ ["Nilai diri", "Dihargai", "Merasa", "Oleh orang lain", "Sudut pandang orang pertama"]
+"I feel valued and appreciated by others"
+→ ["Self-worth", "Valued", "Feeling", "By others", "First-person perspective"]
 
 Rules:
-- Use SHORT labels, sentence case (e.g., "Kepercayaan diri" not "Kepercayaan Diri")
+- Use SHORT labels, sentence case (e.g., "Confidence" not "confidence")
 - Minimum 3 traits (simple sentences)
 - Maximum 7 traits (very complex sentences)
 - Extract ALL meaningful psychological components, don't artificially limit

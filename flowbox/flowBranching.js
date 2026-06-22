@@ -69,7 +69,7 @@ const FlowBranching = (function () {
         const submitBtn = document.getElementById('branching-submit');
         if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.querySelector('span').textContent = 'Buat Cabang Baru';
+            submitBtn.querySelector('span').textContent = 'Create New Branch';
         }
     }
 
@@ -138,7 +138,7 @@ const FlowBranching = (function () {
      */
     function showBranchingError(message) {
         console.error('[MLPA Branching]', message);
-        alert('Gagal membuat cabang: ' + message);
+        alert('Failed to create branch: ' + message);
     }
 
     /**
@@ -147,7 +147,7 @@ const FlowBranching = (function () {
      * @param {HTMLElement} button - Submit button
      * @param {string} baseText - Base text without dots
      */
-    function startLoadingDots(button, baseText = 'Memproses') {
+    function startLoadingDots(button, baseText = 'Processing') {
         stopLoadingDots();
 
         let dotCount = 0;
@@ -218,7 +218,7 @@ const FlowBranching = (function () {
         // Show loading state
         if (submitBtn) {
             submitBtn.disabled = true;
-            startLoadingDots(submitBtn, 'Memproses');
+            startLoadingDots(submitBtn, 'Processing');
         }
 
         try {
@@ -272,7 +272,7 @@ const FlowBranching = (function () {
 
         } catch (error) {
             console.error('[MLPA Branching] Error:', error);
-            const errorMessage = error.message || error.type || 'Terjadi kesalahan. Coba lagi.';
+            const errorMessage = error.message || error.type || 'An error occurred. Try again.';
             showBranchingError(errorMessage);
         } finally {
             // Release lock
@@ -282,7 +282,7 @@ const FlowBranching = (function () {
             if (submitBtn) {
                 stopLoadingDots();
                 submitBtn.disabled = false;
-                submitBtn.querySelector('span').textContent = 'Buat Cabang Baru';
+                submitBtn.querySelector('span').textContent = 'Create New Branch';
             }
         }
     }

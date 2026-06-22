@@ -20,7 +20,7 @@
 function renderQuestionnaireItem(elements, item, currentIndex, totalItems) {
     if (!item) {
         if (elements.itemText) {
-            elements.itemText.textContent = 'Tidak ada item untuk ditampilkan';
+            elements.itemText.textContent = 'No items to display';
         }
         return;
     }
@@ -31,7 +31,7 @@ function renderQuestionnaireItem(elements, item, currentIndex, totalItems) {
     }
 
     // Update item text - try common column names
-    const textValue = item.item_text || item.text || item.question || item.pernyataan ||
+    const textValue = item.item_text || item.text || item.question || item.statement || item.pernyataan ||
         Object.values(item).find(v => typeof v === 'string' && v.length > 10) ||
         Object.values(item)[1] || 'No text available';
 

@@ -293,11 +293,11 @@
     // Animated dots
     let dotCount = 0;
     if (loadingText) {
-      loadingText.textContent = 'Memproses skala.';
+      loadingText.textContent = 'Processing scale.';
       uploadLoadingInterval = setInterval(() => {
         dotCount = (dotCount + 1) % 3;
         const dots = '.'.repeat(dotCount + 1);
-        loadingText.textContent = 'Memproses skala' + dots;
+        loadingText.textContent = 'Processing scale' + dots;
       }, 400);
     }
   }
@@ -653,14 +653,14 @@
     const genzPos = flowEditor.getNextBranchPosition(rootScale.scale_id, 0);
     const itemsGenz = MOCK_ITEMS.filter(i => i.scale_group === 'genz');
     const dimsGenz = [
-      { name: 'Kepercayaan Diri & Keberanian', items: itemsGenz.filter(i => i.dimension === 'Kepercayaan Diri & Keberanian') },
-      { name: 'Regulasi Emosi & Interaksi', items: itemsGenz.filter(i => i.dimension === 'Regulasi Emosi & Interaksi') },
-      { name: 'Optimisme dan Tujuan (Goals)', items: itemsGenz.filter(i => i.dimension === 'Optimisme dan Tujuan (Goals)') }
+      { name: 'Self-Confidence & Courage', items: itemsGenz.filter(i => i.dimension === 'Self-Confidence & Courage') },
+      { name: 'Emotional Regulation & Interaction', items: itemsGenz.filter(i => i.dimension === 'Emotional Regulation & Interaction') },
+      { name: 'Optimism and Goals', items: itemsGenz.filter(i => i.dimension === 'Optimism and Goals') }
     ];
 
     const genzScale = {
       scale_id: 'skala-genz',
-      scale_name: 'Skala Gen-Z - Skala Kepercayaan Diri',
+      scale_name: 'Gen-Z Scale - Self-Confidence Scale',
       parent_scale_id: rootScale.scale_id,
       is_root: false,
       expanded: false,
@@ -676,14 +676,14 @@
     const boomerPos = flowEditor.getNextBranchPosition(rootScale.scale_id, 1);
     const itemsBoomer = MOCK_ITEMS.filter(i => i.scale_group === 'boomer');
     const dimsBoomer = [
-      { name: 'Kepercayaan Diri pada Usia Boomer', items: itemsBoomer.filter(i => i.dimension === 'Kepercayaan Diri pada Usia Boomer') },
-      { name: 'Regulasi Emosi dan Interaksi Sosial', items: itemsBoomer.filter(i => i.dimension === 'Regulasi Emosi dan Interaksi Sosial') },
-      { name: 'Optimisme dan Makna Hidup', items: itemsBoomer.filter(i => i.dimension === 'Optimisme dan Makna Hidup') }
+      { name: 'Self-Confidence at Boomer Age', items: itemsBoomer.filter(i => i.dimension === 'Self-Confidence at Boomer Age') },
+      { name: 'Emotional Regulation and Social Interaction', items: itemsBoomer.filter(i => i.dimension === 'Emotional Regulation and Social Interaction') },
+      { name: 'Optimism and Life Meaning', items: itemsBoomer.filter(i => i.dimension === 'Optimism and Life Meaning') }
     ];
 
     const boomerScale = {
       scale_id: 'skala-boomer',
-      scale_name: 'Skala Boomer - Skala Kepercayaan Diri',
+      scale_name: 'Boomer Scale - Self-Confidence Scale',
       parent_scale_id: rootScale.scale_id,
       is_root: false,
       expanded: false,

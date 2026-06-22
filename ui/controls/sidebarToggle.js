@@ -19,8 +19,8 @@ const SidebarToggle = (function () {
         // Update tooltip text
         if (elements.sidebarToggleTooltip) {
             elements.sidebarToggleTooltip.textContent = state.sidebarCollapsed
-                ? 'Tampilkan sidebar'
-                : 'Sembunyikan sidebar';
+                ? 'Show sidebar'
+                : 'Hide sidebar';
         }
     }
 

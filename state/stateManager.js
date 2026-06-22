@@ -16,7 +16,7 @@
 /**
  * @typedef {Object} Scale
  * @property {string} scale_id - Unique identifier (e.g., "skala-asli", "skala-asli-branch-1")
- * @property {string} scale_name - Display name (e.g., "Skala Gen-Z - Skala Kepercayaan Diri")
+ * @property {string} scale_name - Display name (e.g., "Original Scale - Self-Confidence Scale")
  * @property {string|null} parent_scale_id - Parent scale ID or null for root
  * @property {boolean} is_root - True if this is the root scale
  * @property {boolean} expanded - UI expand/collapse state (default: false)

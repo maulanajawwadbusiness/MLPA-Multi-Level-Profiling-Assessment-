@@ -35,7 +35,7 @@ const ScaleSelector = (function () {
         if (!elements.scaleSelectorNodes || !elements.scaleSelectorConnections) return;
 
         if (!scales || scales.size === 0) {
-            elements.scaleSelectorNodes.innerHTML = '<p style="color: var(--color-text-muted); text-align: center;">Tidak ada skala tersedia</p>';
+            elements.scaleSelectorNodes.innerHTML = '<p style="color: var(--color-text-muted); text-align: center;">No scales available</p>';
             elements.scaleSelectorConnections.innerHTML = '';
             return;
         }
@@ -62,7 +62,7 @@ const ScaleSelector = (function () {
              style="margin-left: ${indent}px;">
           <span class="scale-node-dot"></span>
           <span class="scale-node-name">${scale.scale_name}</span>
-          ${depth > 0 ? `<span class="scale-node-depth">Cabang</span>` : '<span class="scale-node-depth">Asal</span>'}
+          ${depth > 0 ? `<span class="scale-node-depth">Branch</span>` : '<span class="scale-node-depth">Original</span>'}
         </div>
       `;
 
