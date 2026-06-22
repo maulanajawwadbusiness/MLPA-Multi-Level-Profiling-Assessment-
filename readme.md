@@ -10,17 +10,17 @@
 The **MLPA (Multi-Level Profiling Assessment)** prototype is a web-based tool for psychometric scale management. It allows users to upload CSV data, visualize psychometric scales, run assessments, and edit/adapt scales using a node-based flow interface with semantic rubric tracking.
 
 **Target Audience:** Psychometricians and researchers.  
-**Key Focus:** Modular architecture, clean UI, responsive flow editing, contenteditable item editing, and semantic rubric visualization.
+**Key Focus:** Modular architecture, clean UI, responsive flow editing, content-editable item editing, and semantic rubric visualization.
 
 ---
 
-What you need: Your own OpenAI API key. You can get it in [OpenAI Platform](https://platform.openai.com/api-keys).
+**What you need:** Your own OpenAI API key. You can get it in [OpenAI Platform](https://platform.openai.com/api-keys).
 
-How to run in your computer:
+**How to run in your computer:**
 
 1. Download this repo, and put it in your folder.
-2. Open the `config.js` file. Change YOUR-API-KEY to your own OpenAI API key.
-3. Open `index.html`. Your app now run.
+2. Open the `config.js` file. Edit `YOUR-API-KEY` to your own OpenAI API key.
+3. Open `index.html`. Your app will now run.
 
 ---
 
@@ -347,7 +347,7 @@ flowEditor.renderAll() → DOM update
 ## 7. Rubric System
 
 ### 7.1 Dual Rubric Tracking
-Each item has TWO rubric arrays:
+Each item has 2 rubric arrays:
 - **baseline_rubric:** Original rubric from parent scale
 - **current_rubric:** GPT-extracted rubric from adapted item
 
